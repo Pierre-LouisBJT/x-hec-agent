@@ -108,12 +108,12 @@ def send_image(request: Message):
     )
 
     # Save the generated image
-    with open("generated_image.webp", "wb") as f:
+    with open("outputs/generated_image.webp", "wb") as f:
         f.write(output[0].read())
 
     # Return the image file
     return FileResponse(
-        path="generated_image.webp",
+        path="outputs/generated_image.webp",
         media_type="image/webp",
         filename="generated_image.webp",
     )
